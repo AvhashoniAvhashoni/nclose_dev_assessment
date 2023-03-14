@@ -1,0 +1,25 @@
+@import './../../../../styles.scss';
+
+.output-text-field-div {
+    margin-bottom: 25px;
+    max-width: $textFieldWidth;
+    min-height: $textFieldHeight;
+
+    mat-card {
+        border: solid 1px $white;
+        padding: unset;
+        border-radius: 10px;
+        height: 100%;
+        background-color: $background;
+        cursor: grab;
+        display: flex;
+        justify-content: center;
+        align-items: center start;
+        flex-direction: column;
+
+        mat-card-content {
+            font-size: $textFieldFontSize ;
+            padding: 19.5px;
+        }
+    }
+}

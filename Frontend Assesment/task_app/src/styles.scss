@@ -1,0 +1,68 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Colors
+$background: #424242;
+$disabledGrey: #7E7E7E;
+$white: #FFFFFF;
+$deleteRed: #EF4F16;
+$buttonPrimary: #00BFD4;
+$successGreen: #3C730F;
+$failureRed: #EF4F16;
+
+// Typography
+$textFieldHeight: 63px;
+$textFieldWidth: 500px;
+$mainHeadingFontSize: 42px;
+$textFieldFontSize: 18px;
+$family: Roboto;
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: $family;
+    background-color: $background;
+    color: $white;
+}
+
+
+h1 {
+    font-size: $mainHeadingFontSize;
+    font-weight: 400;
+}
+
+button {
+    color: $white;
+    background-color: $buttonPrimary;
+    font-size: $textFieldFontSize !important;
+}
+
+button:disabled {
+    background-color: $disabledGrey;
+}
+
+.snackBar {
+    margin-top: 90px !important;
+}
+
+.snackBarDelete {
+    background-color: $deleteRed;
+}
+
+.snackBarSuccess {
+    background-color: $successGreen;
+}
+
+.snackBarFail {
+    background-color: $failureRed;
+}
+
+button:hover {
+    opacity: 0.8;
+    transition: .5s ease;
+}

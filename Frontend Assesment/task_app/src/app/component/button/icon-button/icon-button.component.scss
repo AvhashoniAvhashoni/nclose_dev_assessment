@@ -1,0 +1,11 @@
+@import './../../../../styles.scss';
+
+button {
+    color: $white;
+    float: right;
+    margin: 5px 0 5px 10px;
+}
+
+.delete-icon-btn {
+    background-color: $deleteRed;
+}

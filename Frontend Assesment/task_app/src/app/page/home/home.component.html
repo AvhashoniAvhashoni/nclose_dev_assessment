@@ -1,0 +1,28 @@
+<main>
+    <!-- calling header using selector; located in app/component/header folder -->
+    <app-header></app-header>
+    <div class="content">
+        <h1>Tasks</h1>
+        <!-- calling icon button using selector; located in app/component/button/icon-button folder -->
+        <!-- passing the icon type "[icon]" and check if button is disabled "[disabled]"; '(click)="addTaskToList()"' adds the task inputed to the task list -->
+        <app-icon-button [icon]="'add'" [disabled]="disableBtn" (click)="addTaskToList()"></app-icon-button>
+        <!-- calling input field using selector; located in app/component/text-field/input-text-field folder -->
+        <app-input-text-field></app-input-text-field>
+        <!-- using angular material cdk to allow the user to order the tasks -->
+        <div cdkDropList (cdkDropListDropped)="moveTaskInList($event)">
+            <!-- looping through tasks -->
+            <div *ngFor="let tsk of tasks" cdkDrag>
+                <!-- calling icon button using selector; located in app/component/button/icon-button folder -->
+                <!-- passing the icon type "[icon]" and force button to not disable; '(click)="removeTaskFromList(tsk)"' removes the task from the list -->
+                <app-icon-button [icon]="'delete_outline'" [disabled]="false" (click)="removeTaskFromList(tsk)"></app-icon-button>
+                <!-- calling output card using selector; located in app/component/text-field/output-text-fieldfolder -->
+                <!-- passing the task in "[content]"; -->
+                <app-output-text-field [content]="tsk"></app-output-text-field>
+            </div>
+        </div>
+        <!-- calling button using selector; located in app/component/button/raised-button folder -->
+        <!-- hide button if the list is empty -->
+        <!-- "clearTask()" removes all tasks from the list -->
+        <app-raised-button *ngIf="tasks.length > 0" (click)="clearTask()"></app-raised-button>
+    </div>
+</main>

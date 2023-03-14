@@ -1,0 +1,23 @@
+@import './../../../../styles.scss';
+
+.input-text-field-div {
+    margin-bottom: 50px;
+    max-width: $textFieldWidth;
+    height: $textFieldHeight;
+
+    mat-form-field {
+        border: solid 1px $white;
+        height: 100%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center start;
+        flex-direction: column;
+        padding: 0 19.5px;
+
+        input {
+            width: 100%;
+            font-size: $textFieldFontSize;
+        }
+    }
+}
